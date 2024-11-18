@@ -48,6 +48,7 @@ function getRestoreKeys(customRestoreKeysInput) {
 async function restoreRPCCache() {
   const customKeyInput = core.getInput("cache-key");
   const primaryKey = getPrimaryKey(customKeyInput);
+  core.info(`Primary key: ${primaryKey}`);
   core.saveState(State.CachePrimaryKey, primaryKey);
 
   const customRestoreKeysInput = core.getInput("cache-restore-keys");
