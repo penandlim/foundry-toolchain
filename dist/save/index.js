@@ -84706,7 +84706,7 @@ function getRestoreKeys(customRestoreKeysInput) {
     .map((input) => input.trim())
     .filter((input) => input !== "")
     .map((input) => `${CACHE_PREFIX}${input}`);
-  return [...defaultRestoreKeys, ...restoreKeys];
+  return restoreKeys;
 }
 
 /**
