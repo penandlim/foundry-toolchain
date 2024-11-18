@@ -52,6 +52,7 @@ async function restoreRPCCache() {
 
   const customRestoreKeysInput = core.getInput("cache-restore-keys");
   const restoreKeys = getRestoreKeys(customRestoreKeysInput);
+  core.info(`Restore keys: ${restoreKeys.join(", ")}`);
   const matchedKey = await cache.restoreCache(CACHE_PATHS, primaryKey, restoreKeys);
 
   if (!matchedKey) {
